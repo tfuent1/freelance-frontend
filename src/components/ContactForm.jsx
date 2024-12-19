@@ -29,9 +29,13 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        setStatus({ type: "success", message: data.success });
+        setStatus({ type: "success", message: "Form submitted successfully. Thank you!" });
         setFormData({ name: "", email: "", message: "" }); // Reset the form
+
+        // Hide the success message after 5 seconds
+        setTimeout(() => {
+          setStatus({ type: "", message: "" });
+        }, 5000);
       } else {
         const errorData = await response.json();
         setStatus({ type: "error", message: errorData.error });
