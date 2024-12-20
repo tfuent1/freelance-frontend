@@ -26,7 +26,7 @@ const Navbar = () => {
           Portfolio
         </Button>
         <Button color="inherit" component={Link} to="/contact">
-          Contact
+          Let's Connect
         </Button>
       </Toolbar>
     </AppBar>
